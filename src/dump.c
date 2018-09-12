@@ -12,7 +12,7 @@
 
 #include "lem_in.h"
 #include <stdio.h> //REMOVE ME
-void	dump(t_graph *head)
+void	dump(t_node *head)
 {
 	while (head)
 	{

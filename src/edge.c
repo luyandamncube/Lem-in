@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	edge(int *V, int k, t_graph *list)
+void	edge(int *V, int k, t_node *list)
 {
-	V[k] = malloc(sizeof(t_graph));
+	V[k] = malloc(sizeof(t_node));
 
 }
 

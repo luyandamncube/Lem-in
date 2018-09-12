@@ -12,11 +12,11 @@
 
 #include "lem_in.h"
 
-t_graph		*create(int x, int y, int id)
+t_node		*create(int x, int y, int id)
 {
-	t_graph	*new;
+	t_node	*new;
 
-	new = (t_graph*)malloc(sizeof(t_graph));
+	new = (t_node*)malloc(sizeof(t_node));
 	new->next = NULL;
 	new->x = x;
 	new->y = y;

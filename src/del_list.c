@@ -12,10 +12,10 @@
 
 #include "lem_in.h"
 
-void	del_list(t_graph **head)
+void	del_list(t_node **head)
 {
-	t_graph *current = *head;
-	t_graph *next;
+	t_node *current = *head;
+	t_node *next;
 
 	while (current != NULL) 
 	{

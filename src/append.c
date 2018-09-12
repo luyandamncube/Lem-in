@@ -12,9 +12,9 @@
 
 #include "lem_in.h"
 
-void 	append(t_graph** head_ref, t_graph *new_node) 
+void 	append(t_node** head_ref, t_node *new_node) 
 { 
-    t_graph *last = *head_ref;
+    t_node *last = *head_ref;
 
 	new_node->next = NULL; 
     if (*head_ref == NULL) 

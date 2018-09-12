@@ -14,18 +14,18 @@
 # define LEM_IN
 # include "../libft/includes/libft.h"
 
-typedef struct		s_graph
+typedef struct		s_node
 {
 	int				id;
 	int				x;
 	int				y;
 	int				visited;
-	struct s_graph	*next;
-}					t_graph;
+	struct s_node	*next;
+}					t_node;
 
-void				append(t_graph** head_ref, t_graph *new_node);
-t_graph				*create(int x, int y, int id);
-void				dump(t_graph *head);
-void				del_list(t_graph **head);
+void				append(t_node** head_ref, t_node *new_node);
+t_node				*create(int x, int y, int id);
+void				dump(t_node *head);
+void				del_list(t_node **head);
 
 # endif 

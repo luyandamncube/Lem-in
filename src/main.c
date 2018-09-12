@@ -14,10 +14,10 @@
 #include <stdio.h>
 int		main()
 {
-	t_graph *n1;
-	t_graph *n2;
-	t_graph *n3;
-	t_graph *head;
+	t_node *n1;
+	t_node *n2;
+	t_node *n3;
+	t_node *head;
 
 	n1 = create(4, 5,789);
 	head = n1;
