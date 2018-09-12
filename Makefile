@@ -1,9 +1,10 @@
 NAME		= Lem-in
 FILENAMES 	= main.c \
-			  create.c \
-			  append.c \
-			  dump.c \
-			  del_list.c \
+		  create_node.c \
+		  create_graph.c \
+		  append.c \
+		  dump.c \
+		  del_list.c \
 
 HDIR     	= ./includes
 SDIR     	= ./src/

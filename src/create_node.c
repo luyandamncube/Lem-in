@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   edge.c                                             :+:      :+:    :+:   */
+/*   create.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/12 14:17:26 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/12 15:27:13 by lmncube          ###   ########.fr       */
+/*   Created: 2018/09/12 12:06:14 by lmncube           #+#    #+#             */
+/*   Updated: 2018/09/12 14:00:41 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	edge(int *V, int k, t_node *list)
-{
-	V[k] = malloc(sizeof(t_node));
+#include "lem_in.h"
 
-}
-
-void addEdge(vector<int> adj[], int u, int v)
+t_node		*create_node(int id)
 {
-    adj[u].push_back(v);
-    adj[v].push_back(u);
+	t_node	*new;
+
+	new = (t_node*)malloc(sizeof(t_node));
+	new->next = NULL;
+	new->id = id;
+	new->visited = 0;
+	return (new);
 }

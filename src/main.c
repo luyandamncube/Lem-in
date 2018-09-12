@@ -17,16 +17,18 @@ int		main()
 	t_node *n1;
 	t_node *n2;
 	t_node *n3;
-	t_node *head;
+	t_adjlist *list;
 
-	n1 = create(4, 5,789);
-	head = n1;
-	n2 = create(9, 19, 53);
-	append(&head, n2);
-	n3 = create(45, -8, 0);
-	append(&head, n3);
-	dump(head);
-	del_list(&head);
-	dump(head);
+	list = malloc(sizeof(t_adjlist));
+	n1 = create_node(789);
+	list->head = n1;
+	n2 = create_node(53);
+	append(&list, n2);
+	n3 = create_node(0);
+	append(&list, n3);
+	
+	dump(list->head);
+	del_list(&list->head);
+	free(list);
 	return (0);
 }

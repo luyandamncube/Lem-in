@@ -11,17 +11,13 @@
 /* ************************************************************************** */
 
 #include "lem_in.h"
-#include <stdio.h> //REMOVE ME
+
 void	dump(t_node *head)
 {
 	while (head)
 	{
-		ft_putstr("node: id");
+		ft_putstr("id ");
 		ft_putnbr(head->id);
-		ft_putstr(" x");
-		ft_putnbr(head->x);
-		ft_putstr(" y");
-		ft_putnbr(head->y);
 		ft_putstr("\n");
 		head = head->next;
 	} 

@@ -17,14 +17,25 @@
 typedef struct		s_node
 {
 	int				id;
-	int				x;
-	int				y;
 	int				visited;
 	struct s_node	*next;
 }					t_node;
 
-void				append(t_node** head_ref, t_node *new_node);
-t_node				*create(int x, int y, int id);
+typedef struct		s_adjlist
+{	
+	int				N;
+	t_node *head;
+}					t_adjlist;
+
+typedef struct		s_graph
+{	
+	int				N;
+	t_adjlist *array;
+}					t_graph;
+
+void				append(t_adjlist **list, t_node *new_node);
+t_node				*create_node(int id);
+t_graph				*create_graph(int N);
 void				dump(t_node *head);
 void				del_list(t_node **head);
 

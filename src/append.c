@@ -12,17 +12,16 @@
 
 #include "lem_in.h"
 
-void 	append(t_node** head_ref, t_node *new_node) 
-{ 
-    t_node *last = *head_ref;
-
-	new_node->next = NULL; 
-    if (*head_ref == NULL) 
-    { 
-       *head_ref = new_node; 
-       return; 
-    }   
-    while (last->next != NULL) 
-        last = last->next; 
-    last->next = new_node; 
+void 	append(t_adjlist **list, t_node *new_node) 
+{
+	t_node *last = (*list)->head;
+	new_node->next = NULL;
+	if ((*list)->head == NULL)
+	{
+		(*list)->head = new_node;
+		return;
+	}
+	while (last->next != NULL)
+		last = last->next;
+	last->next = new_node; 
 } 
