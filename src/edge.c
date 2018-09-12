@@ -1,32 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   edge.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/12 12:12:19 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/12 15:17:07 by lmncube          ###   ########.fr       */
+/*   Created: 2018/09/12 14:17:26 by lmncube           #+#    #+#             */
+/*   Updated: 2018/09/12 15:27:13 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem_in.h"
-#include <stdio.h>
-int		main()
+void	edge(int *V, int k, t_graph *list)
 {
-	t_graph *n1;
-	t_graph *n2;
-	t_graph *n3;
-	t_graph *head;
+	V[k] = malloc(sizeof(t_graph));
 
-	n1 = create(4, 5,789);
-	head = n1;
-	n2 = create(9, 19, 53);
-	append(&head, n2);
-	n3 = create(45, -8, 0);
-	append(&head, n3);
-	dump(head);
-	del_list(&head);
-	dump(head);
-	return (0);
+}
+
+void addEdge(vector<int> adj[], int u, int v)
+{
+    adj[u].push_back(v);
+    adj[v].push_back(u);
 }

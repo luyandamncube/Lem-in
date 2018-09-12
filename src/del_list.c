@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   del_list.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/12 12:12:19 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/12 15:17:07 by lmncube          ###   ########.fr       */
+/*   Created: 2018/09/12 14:43:43 by lmncube           #+#    #+#             */
+/*   Updated: 2018/09/12 15:13:33 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-#include <stdio.h>
-int		main()
-{
-	t_graph *n1;
-	t_graph *n2;
-	t_graph *n3;
-	t_graph *head;
 
-	n1 = create(4, 5,789);
-	head = n1;
-	n2 = create(9, 19, 53);
-	append(&head, n2);
-	n3 = create(45, -8, 0);
-	append(&head, n3);
-	dump(head);
-	del_list(&head);
-	dump(head);
-	return (0);
+void	del_list(t_graph **head)
+{
+	t_graph *current = *head;
+	t_graph *next;
+
+	while (current != NULL) 
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	head = NULL;
 }

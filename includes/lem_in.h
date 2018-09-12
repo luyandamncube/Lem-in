@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 11:29:46 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/12 14:07:45 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/12 15:12:32 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ typedef struct		s_graph
 void				append(t_graph** head_ref, t_graph *new_node);
 t_graph				*create(int x, int y, int id);
 void				dump(t_graph *head);
+void				del_list(t_graph **head);
 
 # endif 

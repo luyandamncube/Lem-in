@@ -3,6 +3,7 @@ FILENAMES 	= main.c \
 			  create.c \
 			  append.c \
 			  dump.c \
+			  del_list.c \
 
 HDIR     	= ./includes
 SDIR     	= ./src/
