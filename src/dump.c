@@ -7,13 +7,11 @@ void	dump_list(t_adjlist list)
 	current = list.head;
 	while (current)
 	{
-		ft_putstr("id ");
-		ft_putnbr(current->id);
-		ft_putstr(" name ");
 		ft_putstr(current->name);
-		ft_putstr("\n");
+		ft_putstr("\t");
 		current = current->next;
 	}
+	ft_putstr("\n");
 }
 
 void	dump_graph(t_graph *graph)

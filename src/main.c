@@ -21,7 +21,7 @@ int		main(void)
 	edge(graph, "789");
 	edge(graph, "quirky");
 	edge(graph, "nasty");
-	add_link(graph, "789", "newboi");
+	add_link(graph, "789", "quirky");
 	printf("======= adj list at index 0 ====== \n");
 	dump_list(graph->array[0]);
 	printf("======= graph  ====== \n");
