@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 14:43:43 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/12 15:13:33 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/13 13:09:00 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 void	del_list(t_node **head)
 {
-	t_node *current = *head;
+	t_node *current;
 	t_node *next;
 
-	while (current != NULL) 
+	current = *head;
+	while (current != NULL)
 	{
 		next = current->next;
 		free(current);

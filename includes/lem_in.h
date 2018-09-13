@@ -6,12 +6,12 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 11:29:46 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/12 15:12:32 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/13 13:03:28 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEM_IN
-# define LEM_IN
+#ifndef LEM_IN_H
+# define LEM_IN_H
 # include "../libft/includes/libft.h"
 
 typedef struct		s_node
@@ -22,21 +22,21 @@ typedef struct		s_node
 }					t_node;
 
 typedef struct		s_adjlist
-{	
-	int				N;
-	t_node *head;
+{
+	int				n;
+	t_node			*head;
 }					t_adjlist;
 
 typedef struct		s_graph
-{	
-	int				N;
-	t_adjlist *array;
+{
+	int				n;
+	t_adjlist		*array;
 }					t_graph;
 
 void				append(t_adjlist **list, t_node *new_node);
 t_node				*create_node(int id);
-t_graph				*create_graph(int N);
+t_graph				*create_graph(int n);
 void				dump(t_node *head);
 void				del_list(t_node **head);
 
-# endif 
+#endif

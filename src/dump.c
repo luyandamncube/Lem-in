@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 13:00:39 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/12 13:59:30 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/13 13:09:44 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	dump(t_node *head)
 		ft_putnbr(head->id);
 		ft_putstr("\n");
 		head = head->next;
-	} 
+	}
 }
