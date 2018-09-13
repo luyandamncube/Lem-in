@@ -12,11 +12,12 @@
 
 #include "lem_in.h"
 
-t_node		*create_node(int id)
+t_node		*create_node(int id, char *name)
 {
 	t_node	*new;
 
 	new = (t_node*)malloc(sizeof(t_node));
+	new->name = ft_strdup(name);
 	new->next = NULL;
 	new->id = id;
 	new->visited = 0;

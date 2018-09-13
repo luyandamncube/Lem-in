@@ -1,24 +1,26 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   dump.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/12 13:00:39 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/13 13:09:44 by lmncube          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "lem_in.h"
 
-void	dump(t_node *head)
+void	dump_list(t_adjlist list)
 {
-	while (head)
+	t_node *current;
+
+	current = list.head;
+	while (current)
 	{
 		ft_putstr("id ");
-		ft_putnbr(head->id);
+		ft_putnbr(current->id);
+		ft_putstr(" name ");
+		ft_putstr(current->name);
 		ft_putstr("\n");
-		head = head->next;
+		current = current->next;
 	}
+}
+
+void	dump_graph(t_graph *graph)
+{
+	int k;
+
+	k = -1;
+	while (graph->array[++k].head)
+		dump_list(graph->array[k]);
 }

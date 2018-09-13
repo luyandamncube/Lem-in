@@ -12,15 +12,15 @@
 
 #include "lem_in.h"
 
-void	append(t_adjlist **list, t_node *new_node)
+void	append(t_adjlist *list, t_node *new_node)
 {
 	t_node *last;
 
-	last = (*list)->head;
+	last = list->head;
 	new_node->next = NULL;
-	if ((*list)->head == NULL)
+	if (list->head == NULL)
 	{
-		(*list)->head = new_node;
+		list->head = new_node;
 		return ;
 	}
 	while (last->next != NULL)

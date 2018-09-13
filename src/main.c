@@ -11,24 +11,30 @@
 /* ************************************************************************** */
 
 #include "lem_in.h"
+#include <stdio.h> //REMOVE ME
 
 int		main(void)
 {
-	t_node		*n1;
-	t_node		*n2;
-	t_node		*n3;
-	t_adjlist	*list;
 	t_graph		*graph;
-
-	list = malloc(sizeof(t_adjlist));
-	n1 = create_node(789);
-	list->head = n1;
-	n2 = create_node(53);
-	append(&list, n2);
-	n3 = create_node(0);
-	append(&list, n3);
-	dump(list->head);
-	del_list(&list->head);
-	free(list);
+	
+	graph = create_graph(10);
+	edge(graph, "789");
+	edge(graph, "quirky");
+	edge(graph, "nasty");
+	add_link(graph, "789", "newboi");
+	printf("======= adj list at index 0 ====== \n");
+	dump_list(graph->array[0]);
+	printf("======= graph  ====== \n");
+	dump_graph(graph);
+	free_all(graph);
+	/*
+	   n1 = create_node(0, "789");
+	   list->head = n1;
+	   graph->array[0] = *list;
+	   n2 = create_node(1, "53");
+	   append(&list, n2);
+	   n3 = create_node(2, "-7");
+	   append(&list, n3);
+	*/
 	return (0);
 }
