@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_graph.c                                     :+:      :+:    :+:   */
+/*   find_id.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/13 13:10:18 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/14 13:54:15 by lmncube          ###   ########.fr       */
+/*   Created: 2018/09/14 11:48:06 by lmncube           #+#    #+#             */
+/*   Updated: 2018/09/14 12:05:52 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-#include <stdio.h> //REMOVE ME
-t_graph		*create_graph(int n)
+
+int		find_id(t_graph * graph, char *name)
 {
-	t_graph		*graph;
-	int			k;
+	int k;
 
 	k = -1;
-	graph = (t_graph*)malloc(sizeof(t_graph));
-	graph->n = n;
-	graph->array = (t_adjlist*)malloc(n * sizeof(t_adjlist));
-	while (++k < n)
-		graph->array[k].head = NULL;
-	return (graph);
+	while (graph->array[++k].head)
+		if (ft_strcmp(name, graph->array[k].head->name) == 0)
+			return (k);
+	return (-1);
 }

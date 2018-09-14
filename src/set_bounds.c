@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_graph.c                                     :+:      :+:    :+:   */
+/*   set_bounds.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/13 13:10:18 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/14 13:54:15 by lmncube          ###   ########.fr       */
+/*   Created: 2018/09/14 13:56:13 by lmncube           #+#    #+#             */
+/*   Updated: 2018/09/14 13:58:35 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-#include <stdio.h> //REMOVE ME
-t_graph		*create_graph(int n)
-{
-	t_graph		*graph;
-	int			k;
 
-	k = -1;
-	graph = (t_graph*)malloc(sizeof(t_graph));
-	graph->n = n;
-	graph->array = (t_adjlist*)malloc(n * sizeof(t_adjlist));
-	while (++k < n)
-		graph->array[k].head = NULL;
-	return (graph);
+void		set_bounds(t_graph *graph, char *start, char *end)
+{
+	graph->start = find_id(graph, start);
+	graph->end = find_id(graph, end);
 }
