@@ -37,6 +37,7 @@ typedef struct		s_graph
 }					t_graph;
 
 int					find_id(t_graph *graph, char *name);
+char				*find_name(t_graph *graph, int id);
 void				append(t_adjlist *list, t_node *new_node);
 t_node				*create_node(int id, char *name);
 t_graph				*create_graph(int n);

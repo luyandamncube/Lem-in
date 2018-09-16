@@ -6,7 +6,7 @@ FILENAMES 	= main.c \
 			  append.c \
 			  dump.c \
 			  free_all.c \
-			  find_id.c \
+			  find.c \
 			  set_bounds.c \
 
 HDIR     	= ./includes

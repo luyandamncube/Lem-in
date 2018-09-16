@@ -20,8 +20,8 @@ t_graph		*create_graph(int n)
 	k = -1;
 	graph = (t_graph*)malloc(sizeof(t_graph));
 	graph->n = n;
-	graph->array = (t_adjlist*)malloc(n * sizeof(t_adjlist));
-	while (++k < n)
+	graph->array = (t_adjlist*)malloc((n + 1) * sizeof(t_adjlist));
+	while (++k < n + 1)
 		graph->array[k].head = NULL;
 	return (graph);
 }
