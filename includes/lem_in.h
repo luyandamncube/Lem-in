@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 11:29:46 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/17 15:05:15 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/17 16:08:58 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,15 @@ typedef struct		s_graph
 	int				start;
 	int				end;
 	int				path_size;
+	int				ants;
+	int				has_start;
+	int				has_end;
 	int				*path;
 	t_adjlist		*array;
 }					t_graph;
 
 int					find_id(t_graph *graph, char *name);
+int					has_path(t_graph *graph);
 char				*find_name(t_graph *graph, int id);
 void				append(t_adjlist *list, t_node *new_node);
 t_node				*create_node(int id, char *name);

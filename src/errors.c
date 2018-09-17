@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_graph.c                                     :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/13 13:10:18 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/17 16:09:41 by lmncube          ###   ########.fr       */
+/*   Created: 2018/09/17 15:52:04 by lmncube           #+#    #+#             */
+/*   Updated: 2018/09/17 16:11:18 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-t_graph		*create_graph(int n)
+int			has_path(t_graph *graph)
 {
-	t_graph		*graph;
-	int			k;
+	int		k;
+	int		start_flag;
+	int		end_flag;
 
 	k = -1;
-	graph = (t_graph*)malloc(sizeof(t_graph));
-	graph->n = n;
-	graph->start = 0;
-	graph->end = 0;
-	graph->has_start = 0;
-	graph->has_end = 0;
-	graph->path_size = 0;
-	graph->ants = 0;
-	graph->array = (t_adjlist*)malloc((n + 1) * sizeof(t_adjlist));
-	graph->path = malloc(MAXPOS);
-	while (++k < n + 1)
-		graph->array[k].head = NULL;
-	return (graph);
+	start_flag = 0;
+	end_flag = 0;
+	while (++k < graph->path_size)
+	{
+		if (graph->path[k] == graph->start)
+			start_flag = 1;
+		if (graph->path[k] == graph->end)
+			end_flag = 1;
+	}
+	if (!start_flag || !end_flag || !graph->has_start || !graph->has_end)
+		return (0);
+	return (1);
 }

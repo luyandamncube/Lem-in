@@ -6,32 +6,20 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:12:19 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/17 15:14:26 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/17 16:03:39 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	dump(t_graph *graph, t_stack *current)
-{
-	int k = -1;
-	if(current->top > 0)
-	{
-		while(++k < current->top)
-		{
-			ft_putstr(find_name(graph, current->s[k]));
-			ft_putstr(" ");
-		}
-		ft_putstr("\n");
-	}
-}
-
 int		main(void)
 {
 	t_graph		*graph;
-	t_stack		*stack;	
+	t_stack		*stack;
+
 	stack = create_stack();
 	graph = create_graph(8);
+	
 	edge(graph, "0");
 	edge(graph, "1");
 	edge(graph, "2");

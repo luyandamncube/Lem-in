@@ -10,6 +10,7 @@ FILENAMES 	= main.c \
 			  find.c \
 			  set_bounds.c \
 			  dft.c \
+			  errors.c \
 
 HDIR     	= ./includes
 SDIR     	= ./src/
