@@ -6,29 +6,11 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:12:19 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/14 16:29:45 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/17 14:14:45 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-#include <stdio.h> //REMOVE ME
-
-typedef	struct	s_stack
-{
-	int			*s;
-	int			top;
-}				t_stack;
-
-void	push(int temp, t_stack *current)
-{
-	current->s[current->top++] = temp;
-}
-
-int	pop(t_stack *current)
-{
-	current->top--;
-	return (current->s[current->top]);
-}
 
 void	dump(t_graph *graph, t_stack *current)
 {
@@ -43,64 +25,64 @@ void	dump(t_graph *graph, t_stack *current)
 		ft_putstr("\n");
 	}
 }
-/*
-   void		DFS(t_graph *graph, int *visited, t_stack *stack)
-   {
-   }*/
 
-void		DFS_main(char *start, t_graph *graph)
+void		DFT (t_graph *graph, t_stack *stack)
 {
-	int		visited[10] = {0};
-	t_stack		*stack;
-	t_node		*current;
+	int			visited[10] = {0};
 	int 		s;
-	int		k;
+	int			k;
+	t_node		*current;
 
-	stack = (t_stack*)malloc(sizeof(t_stack));
-	stack->s = malloc(500);
-	push(find_id(graph, start),stack);
-	while (stack->top)
+	ft_push(graph->start, stack);
+	while (stack->top != 0 && s != graph->end)
 	{	
-		s = pop(stack);
+		s = ft_pop(stack);
+		k = s;
+		current = graph->array[k].head;
 		if (!visited[s])
 		{
 			ft_putstr(find_name(graph, s));
 			visited[s] = 1;
 		}
-		k = s;
-		current = graph->array[k].head;
-		current = current->next;
 		while (current)
 		{
 			if (!visited[current->id])
-				push(current->id , stack);
+				ft_push(current->id , stack);
 			current = current->next;
 		}
 	}
 	ft_putstr("\n");
 }
 
-
 int		main(void)
 {
 	t_graph		*graph;
-
-	graph = create_graph(4);
-	printf("graph size %d \n", graph->n);
+	t_stack		*stack;	
+	stack = create_stack();
+	graph = create_graph(8);
 	edge(graph, "0");
 	edge(graph, "1");
 	edge(graph, "2");
 	edge(graph, "3");
-	add_link(graph, "0", "1");
-	add_link(graph, "0", "2");
-	add_link(graph, "1", "2");
-	add_link(graph, "2", "0");
-	add_link(graph, "2", "3");
-	add_link(graph, "3", "3");
-	printf("======= graph  ====== \n");
+	edge(graph, "4");
+	edge(graph, "5");
+	edge(graph, "6");
+	edge(graph, "7");
+	add_link(graph, "0", "4");
+	add_link(graph, "0", "6");
+	add_link(graph, "1", "3");
+	add_link(graph, "4", "3");
+	add_link(graph, "5", "2");
+	add_link(graph, "3", "5");
+	add_link(graph, "4", "2");
+	add_link(graph, "2", "1");
+	add_link(graph, "7", "6");
+	add_link(graph, "7", "2");
+	add_link(graph, "7", "4");
+	add_link(graph, "6", "5");
 	dump_graph(graph);
-	printf("\n");
-	DFS_main("2", graph);
+	set_bounds(graph, "0", "4");
+	DFT(graph, stack);
 	free_all(graph);
 	return (0);
 }

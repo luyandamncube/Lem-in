@@ -1,45 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_all.c                                         :+:      :+:    :+:   */
+/*   create_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/17 13:18:57 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/17 13:18:58 by lmncube          ###   ########.fr       */
+/*   Created: 2018/09/17 13:29:32 by lmncube           #+#    #+#             */
+/*   Updated: 2018/09/17 13:33:07 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	free_list(t_adjlist *list)
+t_stack		*create_stack(void)
 {
-	t_node *current;
-	t_node *next;
+	t_stack *stack;
 
-	current = list->head;
-	while (current != NULL)
-	{
-		next = current->next;
-		free(current->name);
-		free(current);
-		current = next;
-	}
-	list->head = NULL;
-}
-
-void	free_graph(t_graph *graph)
-{
-	int k;
-
-	k = -1;
-	while (++k < graph->n + 1)
-		free_list(&graph->array[k]);
-	free(graph->array);
-	free(graph);
-}
-
-void	free_all(t_graph *graph)
-{
-	free_graph(graph);
+	stack = (t_stack *)malloc(sizeof(t_stack));
+	stack->s = malloc(500);
+	stack->top = 0;
+	return (stack);
 }

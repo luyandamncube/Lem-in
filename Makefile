@@ -2,6 +2,7 @@ NAME		= Lem-in
 FILENAMES 	= main.c \
 			  create_node.c \
 			  create_graph.c \
+			  create_stack.c \
 			  edge.c \
 			  append.c \
 			  dump.c \
