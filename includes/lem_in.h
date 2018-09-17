@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 11:29:46 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/17 14:38:09 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/17 15:05:15 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct		s_graph
 	int				n;
 	int				start;
 	int				end;
+	int				path_size;
+	int				*path;
 	t_adjlist		*array;
 }					t_graph;
 
@@ -49,7 +51,8 @@ void				dump_list(t_adjlist list);
 void				dump_graph(t_graph *graph);
 void				free_list(t_adjlist *list);
 void				free_graph(t_graph *graph);
-void				free_all(t_graph *graph);
+void				free_stack(t_stack *stack);
+void				free_all(t_graph *graph, t_stack *stack);
 void				set_bounds(t_graph *graph, char *start, char *end);
 void				dft(t_graph *graph, t_stack *stack);
 

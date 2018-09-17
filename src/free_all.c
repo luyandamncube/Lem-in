@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 13:18:57 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/17 13:18:58 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/17 15:02:26 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,18 @@ void	free_graph(t_graph *graph)
 	while (++k < graph->n + 1)
 		free_list(&graph->array[k]);
 	free(graph->array);
+	free(graph->path);
 	free(graph);
 }
 
-void	free_all(t_graph *graph)
+void	free_stack(t_stack *stack)
+{
+	free(stack->s);
+	free(stack);
+}
+
+void	free_all(t_graph *graph, t_stack *stack)
 {
 	free_graph(graph);
+	free_stack(stack);
 }

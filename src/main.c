@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:12:19 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/17 14:14:45 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/17 15:14:26 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,34 +24,6 @@ void	dump(t_graph *graph, t_stack *current)
 		}
 		ft_putstr("\n");
 	}
-}
-
-void		DFT (t_graph *graph, t_stack *stack)
-{
-	int			visited[10] = {0};
-	int 		s;
-	int			k;
-	t_node		*current;
-
-	ft_push(graph->start, stack);
-	while (stack->top != 0 && s != graph->end)
-	{	
-		s = ft_pop(stack);
-		k = s;
-		current = graph->array[k].head;
-		if (!visited[s])
-		{
-			ft_putstr(find_name(graph, s));
-			visited[s] = 1;
-		}
-		while (current)
-		{
-			if (!visited[current->id])
-				ft_push(current->id , stack);
-			current = current->next;
-		}
-	}
-	ft_putstr("\n");
 }
 
 int		main(void)
@@ -80,9 +52,9 @@ int		main(void)
 	add_link(graph, "7", "2");
 	add_link(graph, "7", "4");
 	add_link(graph, "6", "5");
-	dump_graph(graph);
 	set_bounds(graph, "0", "4");
-	DFT(graph, stack);
-	free_all(graph);
+	dft(graph, stack);
+	dump_graph(graph);
+	free_all(graph, stack);
 	return (0);
 }
