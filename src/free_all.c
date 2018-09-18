@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 13:18:57 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/17 15:02:26 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/18 11:06:51 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	free_graph(t_graph *graph)
 		free_list(&graph->array[k]);
 	free(graph->array);
 	free(graph->path);
+	free(graph->visited);
 	free(graph);
 }
 

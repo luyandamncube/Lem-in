@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 11:29:46 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/17 16:08:58 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/18 11:01:31 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 typedef struct		s_node
 {
 	int				id;
-	int				visited;
 	char			*name;
 	struct s_node	*next;
 }					t_node;
@@ -38,6 +37,7 @@ typedef struct		s_graph
 	int				ants;
 	int				has_start;
 	int				has_end;
+	int				*visited;
 	int				*path;
 	t_adjlist		*array;
 }					t_graph;
