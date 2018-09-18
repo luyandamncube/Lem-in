@@ -6,11 +6,24 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 13:17:01 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/17 15:55:23 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/18 15:21:59 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
+
+void	dump_map(char **out)
+{
+	int k;
+
+	k = 0;
+	while (out[k])
+	{
+		ft_putstr(out[k]);
+		ft_putstr("\n");
+		k++;
+	}
+}
 
 void	dump_list(t_adjlist list)
 {

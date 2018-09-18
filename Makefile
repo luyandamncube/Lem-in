@@ -11,6 +11,7 @@ FILENAMES 	= main.c \
 			  set_bounds.c \
 			  dft.c \
 			  errors.c \
+			  map.c \
 
 HDIR     	= ./includes
 SDIR     	= ./src/

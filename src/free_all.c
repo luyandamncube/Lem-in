@@ -6,11 +6,22 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 13:18:57 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/18 11:06:51 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/18 15:41:01 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
+
+void	free_map(char **out)
+{
+	int		k;
+
+	k = -1;
+	while (out[++k])
+		free(out[k]);
+	free(out[k]);
+	free(out);
+}
 
 void	free_list(t_adjlist *list)
 {
@@ -47,8 +58,9 @@ void	free_stack(t_stack *stack)
 	free(stack);
 }
 
-void	free_all(t_graph *graph, t_stack *stack)
+void	free_all(t_graph *graph, t_stack *stack, char **map)
 {
 	free_graph(graph);
 	free_stack(stack);
+	free_map(map);
 }

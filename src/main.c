@@ -6,20 +6,25 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:12:19 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/17 16:03:39 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/18 16:07:31 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
+#include <stdio.h>
+
 
 int		main(void)
 {
 	t_graph		*graph;
 	t_stack		*stack;
+	char		*ret;
+	char 		**map;
 
+	map = read_map(0, &ret); 
 	stack = create_stack();
 	graph = create_graph(8);
-	
+	dump_map(map);
 	edge(graph, "0");
 	edge(graph, "1");
 	edge(graph, "2");
@@ -43,6 +48,6 @@ int		main(void)
 	set_bounds(graph, "0", "4");
 	dft(graph, stack);
 	dump_graph(graph);
-	free_all(graph, stack);
+	free_all(graph, stack, map);
 	return (0);
 }
