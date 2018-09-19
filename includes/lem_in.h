@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 11:29:46 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/18 15:38:34 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/19 15:52:07 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ typedef struct		s_graph
 	t_adjlist		*array;
 }					t_graph;
 
-char				**read_map(int fd, char **ret);
+char				**read_map();
 int					find_id(t_graph *graph, char *name);
 int					has_path(t_graph *graph);
 char				*find_name(t_graph *graph, int id);
@@ -56,11 +56,14 @@ void				add_link(t_graph *graph, char *dest, char *src);
 void				dump_list(t_adjlist list);
 void				dump_graph(t_graph *graph);
 void				dump_map(char **out);
+void				free_map(char **map);
 void				free_list(t_adjlist *list);
 void				free_graph(t_graph *graph);
 void				free_stack(t_stack *stack);
 void				free_all(t_graph *graph, t_stack *stack, char **map);
-void				set_bounds(t_graph *graph, char *start, char *end);
-void				dft(t_graph *graph, t_stack *stack);
+void				get_bounds(t_graph *graph, char **map);
+void				get_edges(t_graph *graph, char **map);
+void				get_links(t_graph *graph, char **map);
+void				dft(t_graph *graph, t_stack *stack, int k);
 
 #endif

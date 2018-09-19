@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/13 13:10:18 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/18 11:10:32 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/19 09:07:02 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ t_graph		*create_graph(int n)
 	graph->array = (t_adjlist*)malloc((n + 1) * sizeof(t_adjlist));
 	graph->path = malloc(MAXPOS);
 	graph->visited = malloc(4096);
-	k = -1;
-	while (++k < 4096)
-		graph->visited[k] = 0;
 	k = -1;
 	while (++k < n + 1)
 		graph->array[k].head = NULL;

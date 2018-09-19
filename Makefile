@@ -8,7 +8,6 @@ FILENAMES 	= main.c \
 			  dump.c \
 			  free_all.c \
 			  find.c \
-			  set_bounds.c \
 			  dft.c \
 			  errors.c \
 			  map.c \

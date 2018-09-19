@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 14:11:35 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/18 11:14:41 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/19 11:19:18 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,27 @@
 int		quick_check(t_node *node, int index)
 {
 	t_node *current;
-	t_node *head;
 
-	head = (t_node*)malloc(sizeof(t_node));
 	current = node;
-	ft_memcpy(head, current, 1000);
 	while (current)
 	{
 		if (index == current->id)
-		{
-			current = head;
-			free(head);
 			return (1);
-		}
 		current = current->next;
 	}
-	current = head;
-	free(head);
 	return (0);
 }
 
-void	dft(t_graph *graph, t_stack *stack)
+void	dft(t_graph *graph, t_stack *stack, int k)
 {
-	int		k;
+	t_node *current;
 
 	ft_push(graph->start, stack);
 	while (stack->top != 0 && k != graph->end)
 	{
 		k = ft_pop(stack);
-		if (quick_check(graph->array[k].head, graph->end))
+		current = graph->array[k].head;
+		if (quick_check(current, graph->end))
 		{
 			graph->path[graph->path_size++] = k;
 			graph->path[graph->path_size++] = graph->end;
@@ -54,11 +46,11 @@ void	dft(t_graph *graph, t_stack *stack)
 			graph->path[graph->path_size++] = k;
 			graph->visited[k] = 1;
 		}
-		while (graph->array[k].head)
+		while (current)
 		{
-			if (!graph->visited[graph->array[k].head->id])
-				ft_push(graph->array[k].head->id, stack);
-			graph->array[k].head = graph->array[k].head->next;
+			if (!graph->visited[current->id])
+				ft_push(current->id, stack);
+			current = current->next;
 		}
 	}
 }

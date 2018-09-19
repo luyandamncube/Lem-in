@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 15:52:04 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/17 16:11:18 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/19 15:51:14 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int			has_path(t_graph *graph)
 		if (graph->path[k] == graph->end)
 			end_flag = 1;
 	}
-	if (!start_flag || !end_flag || !graph->has_start || !graph->has_end)
+	if (!start_flag || !end_flag)
 		return (0);
 	return (1);
 }

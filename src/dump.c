@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 13:17:01 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/18 15:21:59 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/19 15:48:23 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,21 +46,22 @@ void	dump_graph(t_graph *graph)
 	ft_putstr("============ graph  ============ \n");
 	ft_putstr("graph size: \t");
 	ft_putnbr(graph->n);
-	ft_putstr("\n");
-	ft_putstr("graph start: \t");
-	ft_putnbr(graph->start);
-	ft_putstr("\n");
-	ft_putstr("graph end: \t");
-	ft_putnbr(graph->end);
+	ft_putstr("\ngraph start: \t");
+	ft_putstr(find_name(graph, graph->start));
+	ft_putstr("\ngraph end: \t");
+	ft_putstr(find_name(graph, graph->end));
 	ft_putstr("\nhas_path:\t");
-	has_path(graph) ? ft_putstr("yes") : ft_putstr("no");
-	ft_putstr("\npath:\t");
+	if (has_path(graph))
+		ft_putstr("yes\npath:\t");
+	else
+		ft_putstr("no\npath:\t");
 	k = -1;
 	while (++k < graph->path_size)
-		ft_putnbr(graph->path[k]);
-	ft_putstr("\n");
-	ft_putstr("============ graph  =========== \n");
-	ft_putstr("\n");
+	{
+		ft_putstr(find_name(graph, graph->path[k]));
+		ft_putstr(" ");
+	}
+	ft_putstr("\n\n");
 	k = -1;
 	while (graph->array[++k].head)
 		dump_list(graph->array[k]);

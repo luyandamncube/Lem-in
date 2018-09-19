@@ -6,21 +6,20 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 13:18:57 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/18 15:41:01 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/19 15:51:45 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	free_map(char **out)
+void	free_map(char **map)
 {
 	int		k;
 
-	k = -1;
-	while (out[++k])
-		free(out[k]);
-	free(out[k]);
-	free(out);
+	k = 0;
+	while (k < 50)
+		free(map[k++]);
+	free(map);
 }
 
 void	free_list(t_adjlist *list)
