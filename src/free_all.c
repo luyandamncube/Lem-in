@@ -14,10 +14,10 @@
 
 void	free_map(char **map)
 {
-	int		k;
+	size_t		k;
 
 	k = 0;
-	while (k < 50)
+	while (map[k])
 		free(map[k++]);
 	free(map);
 }

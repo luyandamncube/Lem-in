@@ -18,8 +18,10 @@ void	start(t_graph *graph, t_stack *stack, char **map)
 	get_bounds(graph, map);
 	get_edges(graph, map);
 	get_links(graph, map);
-	dump_map(map);
+	illegal_name(map);
+	no_bounds(graph);
 	dft(graph, stack, 0);
+	dump_map(map);
 	dump_graph(graph);
 }
 

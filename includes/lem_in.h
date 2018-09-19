@@ -15,6 +15,7 @@
 # include "../libft/includes/libft.h"
 # include "../libft/includes/get_next_line.h"
 # include "../libft/includes/stack.h"
+# include <stdio.h>
 
 typedef struct		s_node
 {
@@ -46,6 +47,10 @@ typedef struct		s_graph
 char				**read_map();
 int					find_id(t_graph *graph, char *name);
 int					has_path(t_graph *graph);
+void				illegal_name(char **map);
+void				no_bounds(t_graph *graph);
+void                    	no_path(t_graph *graph);
+void				valid_room(char *room);
 char				*find_name(t_graph *graph, int id);
 void				append(t_adjlist *list, t_node *new_node);
 t_node				*create_node(int id, char *name);

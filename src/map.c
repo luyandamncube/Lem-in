@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "lem_in.h"
-#include <stdio.h> //REMOVE ME
 
 char	**read_map()
 {
@@ -22,7 +21,7 @@ char	**read_map()
 
 	k = 0;
 	fd = 0;
-	map = (char**)malloc(sizeof(char*) * 50);
+	map = (char**)malloc(sizeof(char*) * 2000);
 	while (get_next_line(fd, &ret))
 	{
 		map[k++] = ft_strdup(ret);
@@ -54,12 +53,14 @@ void	get_bounds(t_graph *graph, char **map)
 	{
 		if (ft_strcmp(map[k], "##start") == 0)
 		{
+			valid_room(map[k + 1]);
 			edge(graph, get_name(map[k + 1], ' '));
 			graph->has_start = 1;
 			graph->start = 0;
 		}
 		if (ft_strcmp(map[k], "##end") == 0)
 		{
+			valid_room(map[k + 1]);
 			edge(graph, get_name(map[k + 1], ' '));
 			graph->has_end = 1;
 			graph->end = 1;
@@ -77,7 +78,10 @@ void	get_edges(t_graph *graph, char **map)
 		if (ft_wordcount(map[k]) == 3 &&
 			ft_strcmp(get_name(map[k], ' '), find_name(graph, graph->start)) &&
 			ft_strcmp(get_name(map[k], ' '), find_name(graph, graph->end)))
+		{
+			printf("count %d\n", ft_wordcount(map[k]));
 			edge(graph, get_name(map[k], ' '));
+		}
 	}
 }
 
