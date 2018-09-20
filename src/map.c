@@ -6,17 +6,17 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 15:20:03 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/19 16:12:09 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/20 08:59:08 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-char	**read_map()
+char	**read_map(void)
 {
 	char		**map;
 	char		*ret;
-	int         k;
+	int			k;
 	int			fd;
 
 	k = 0;
@@ -79,7 +79,6 @@ void	get_edges(t_graph *graph, char **map)
 			ft_strcmp(get_name(map[k], ' '), find_name(graph, graph->start)) &&
 			ft_strcmp(get_name(map[k], ' '), find_name(graph, graph->end)))
 		{
-			printf("count %d\n", ft_wordcount(map[k]));
 			edge(graph, get_name(map[k], ' '));
 		}
 	}

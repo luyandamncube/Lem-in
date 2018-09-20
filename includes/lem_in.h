@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 11:29:46 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/19 15:52:07 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/20 08:57:36 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,9 @@ char				**read_map();
 int					find_id(t_graph *graph, char *name);
 int					has_path(t_graph *graph);
 void				illegal_name(char **map);
+void				illegal_name2(char **map);
 void				no_bounds(t_graph *graph);
-void                    	no_path(t_graph *graph);
+void				no_path(t_graph *graph);
 void				valid_room(char *room);
 char				*find_name(t_graph *graph, int id);
 void				append(t_adjlist *list, t_node *new_node);

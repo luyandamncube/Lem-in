@@ -6,12 +6,11 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:12:19 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/19 15:55:18 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/20 08:57:52 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-#include <stdio.h> //REMOVE ME
 
 void	start(t_graph *graph, t_stack *stack, char **map)
 {
@@ -19,6 +18,7 @@ void	start(t_graph *graph, t_stack *stack, char **map)
 	get_edges(graph, map);
 	get_links(graph, map);
 	illegal_name(map);
+	illegal_name2(map);
 	no_bounds(graph);
 	dft(graph, stack, 0);
 	dump_map(map);
