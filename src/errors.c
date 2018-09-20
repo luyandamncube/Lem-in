@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 15:52:04 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/20 08:57:18 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/20 11:46:43 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void			no_bounds(t_graph *graph)
 {
 	if (!graph->has_start || !graph->has_end)
 	{
-		perror("ERROR\n");
+		perror("ERROR");
 		exit(1);
 	}
 }

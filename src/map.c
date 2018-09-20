@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 15:20:03 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/20 08:59:08 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/20 14:04:52 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void	get_edges(t_graph *graph, char **map)
 	k = -1;
 	while (map[++k])
 	{
+		if(ft_isnum(map[k]))
+                graph->ants = ft_atoi(map[k]);
 		if (ft_wordcount(map[k]) == 3 &&
 			ft_strcmp(get_name(map[k], ' '), find_name(graph, graph->start)) &&
 			ft_strcmp(get_name(map[k], ' '), find_name(graph, graph->end)))
@@ -96,6 +98,12 @@ void	get_links(t_graph *graph, char **map)
 		{
 			dash = ft_strchr(map[k], '-');
 			dash++;
+			if (find_id(graph, get_name(map[k], '-')) == -1 ||
+				find_id(graph, dash) == -1)
+			{
+				perror("ERROR");
+				exit(1);
+			}
 			add_link(graph, get_name(map[k], '-'), dash);
 		}
 	}
