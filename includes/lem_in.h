@@ -71,5 +71,8 @@ void				get_bounds(t_graph *graph, char **map);
 void				get_edges(t_graph *graph, char **map);
 void				get_links(t_graph *graph, char **map);
 void				dft(t_graph *graph, t_stack *stack, int k);
+void				part_1(t_graph *graph, t_stack *path, t_stack *ants, int LO);
+void				part_2(t_graph *graph, t_stack *path, t_stack *ants, int LO, int ABS);
+void				part_3(t_graph *graph, t_stack *path, t_stack *ants, int LO);
 
 #endif

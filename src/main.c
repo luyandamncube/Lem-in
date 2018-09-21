@@ -27,53 +27,34 @@ void	start(t_graph *graph, t_stack *stack, char **map)
 		exit(1);
 	}
 	dump_map(map);
-	dump_graph(graph);
 }
 
-int		main(void)
+int	main(void)
 {
 	t_graph		*graph;
 	t_stack		*stack;
+	t_stack		*path;
+	t_stack		*ants;
+	int		LO;
+	int		ABS;
 	char		**map;
-	int			q[10];
 
+	path = create_stack();
+	ants = create_stack();
 	stack = create_stack();
 	graph = create_graph(8);
 	map = read_map();
 	start(graph, stack, map);
-	q[0] = 0;
-	q[7] = 1;
-	while (q[0] < (graph->ants + graph->ants/2))
-	{
-		if (q[0] < graph->path_size)
-		{	
-			q[1] = q[0] + 1;
-			q[2] = q[0];
-			q[3] = 1;
-			while (q[1]-- > 0)
-			{
-				printf("L%d = %s ", q[3], find_name(graph, graph->path[q[2]--]));
-				q[3]++;
-			}
-			printf("\n");
-		}
-		else
-		{
-			q[6] = graph->ants - q[0] + q[7] - 1; //controls number of maxim moves at a time
-			q[7]++;
-			q[8] = q[7];
-			q[9] = graph->path_size - 1; //controls index of move. starts at end of path_size
-			q[5] = 0;
-			while (q[5]++ < q[6] && q[8] < graph->ants + 1)
-			{
-				printf("L%d = %s ", q[8]++, find_name(graph, graph->path[q[9]--]));
-				q[3]++;
-			}
-			printf("\n");
-		}
-		q[0]++;
-	}
-	printf("\n");
+	if (graph->path_size > graph->ants)
+		LO = graph->ants;	
+	else
+		LO = graph->path_size;
+	ABS = graph->ants - graph->path_size;
+	ABS > 1 ? ABS = ABS : ABS * (-1);
+	part_1(graph, path, ants, LO);
+	part_2(graph, path, ants, LO, ABS);
+	part_3(graph, path, ants, LO);
+	dump_graph(graph);
 	free_all(graph, stack, map);
 	return (0);
 }

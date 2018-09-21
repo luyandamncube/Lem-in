@@ -6,6 +6,7 @@ FILENAMES 	= main.c \
 			  edge.c \
 			  append.c \
 			  dump.c \
+			  output.c \
 			  free_all.c \
 			  find.c \
 			  dft.c \
