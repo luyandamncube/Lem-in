@@ -1,4 +1,4 @@
-NAME		= Lem-in
+NAME		= lem-in
 FILENAMES 	= main.c \
 			  create_node.c \
 			  create_graph.c \

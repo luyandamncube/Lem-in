@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 13:18:57 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/19 15:51:45 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/24 15:57:31 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,8 @@ void	free_stack(t_stack *stack)
 	free(stack);
 }
 
-void	free_all(t_graph *graph, t_stack *stack, char **map)
+void	free_all(t_graph *graph, t_stack *stack)
 {
 	free_graph(graph);
 	free_stack(stack);
-	free_map(map);
 }

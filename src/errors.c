@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 15:52:04 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/24 12:21:35 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/24 15:40:30 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,25 +44,6 @@ void			illegal_name(char **map)
 		{
 			ft_putendl_fd("ERROR: 'L' in room name found!", 2);
 			exit(1);
-		}
-		/*
-		if (ft_strstr(map[k], "##") && ft_strcmp(map[k], "##end") &&
-			ft_strcmp(map[k], "##start"))
-		{
-			perror("ERROR: invalid command");
-			exit(1);
-		}*/
-	}
-}
-
-void			illegal_name2(char **map)
-{
-	int	k;
-
-	k = -1;
-	while (map[++k])
-	{
-		{
 		}
 	}
 }

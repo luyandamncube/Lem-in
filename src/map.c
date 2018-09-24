@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 15:20:03 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/20 14:04:52 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/24 16:00:04 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,16 +75,16 @@ void	get_edges(t_graph *graph, char **map)
 	k = -1;
 	while (map[++k])
 	{
-		if(ft_wordcount(map[k]) == 1)
+		if (ft_wordcount(map[k]) == 1)
 		{
-			if (ft_isnum(map[k]))
+			if (ft_isnum(map[k]) && ft_atoi(map[k]) > 0)
 				graph->ants = ft_atoi(map[k]);
-			else if (!ft_isnum(map[k]) && !ft_strchr(map[k], '-') && !ft_strchr(map[k], '#'))
+			else if (graph->ants <= 0)
 			{
-				ft_putendl_fd("ERROR: invalid room name found!", 2);
+				ft_putendl_fd("ERROR: number of ants incorrect!", 2);
 				exit(1);
-			}	
-		}         
+			}
+		}
 		if (ft_wordcount(map[k]) == 3 &&
 			ft_strcmp(get_name(map[k], ' '), find_name(graph, graph->start)) &&
 			ft_strcmp(get_name(map[k], ' '), find_name(graph, graph->end)))
@@ -106,13 +106,6 @@ void	get_links(t_graph *graph, char **map)
 		{
 			dash = ft_strchr(map[k], '-');
 			dash++;
-			/*
-			if (find_id(graph, get_name(map[k], '-')) == -1 ||
-				find_id(graph, dash) == -1)
-			{
-				perror("ERROR: with links:");
-				exit(1);
-			}*/
 			add_link(graph, get_name(map[k], '-'), dash);
 		}
 	}
