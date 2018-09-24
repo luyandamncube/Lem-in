@@ -6,11 +6,19 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:12:19 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/24 12:25:28 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/24 13:58:49 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
+
+int		abs_(int a, int b)
+{
+	if ((a - b) < 0)
+		return (b - a);
+	else
+		return (a - b);
+}
 
 void	start(t_graph *graph, t_stack *stack, char **map)
 {
@@ -40,12 +48,10 @@ int	main(void)
 	t_stack		*stack;
 	t_stack		*path;
 	t_stack		*ants;
-	int			sign;
 	int			LO;
 	int			ABS;
 	char		**map;
 
-	sign  = 1;
 	path = create_stack();
 	ants = create_stack();
 	stack = create_stack();
@@ -56,9 +62,8 @@ int	main(void)
 		LO = graph->ants;	
 	else
 		LO = graph->path_size;
-	ABS = graph->ants - graph->path_size;
-	ABS > 1 ? (sign *= 1) : (sign *= -1);
-	ABS *= sign;
+	printf("LO %D\n", LO);
+	ABS = abs_(graph->ants, graph->path_size);
 	part_1(graph, path, ants, LO);
 	part_2(graph, path, ants, LO, ABS);
 	part_3(graph, path, ants, LO);

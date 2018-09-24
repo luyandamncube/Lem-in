@@ -31,8 +31,10 @@ void    part_2(t_graph *graph, t_stack *path, t_stack *ants, int LO, int ABS)
 
 	q[0] = 0;
 	q[3] = ants->top;
+	printf ("ABS %d\n", ABS);
 	while (q[0] < ABS)
 	{
+		printf("PART 2 \n");
 		q[1] = path->top;
 		graph->path_size == LO ? (q[1]) : (q[1] -= 1); //path index
 		graph->path_size == LO ? q[2] = q[0] + 1: q[0]; //ants index
