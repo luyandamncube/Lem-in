@@ -33,7 +33,8 @@ void    part_2(t_graph *graph, t_stack *path, t_stack *ants, int LO, int ABS)
 	q[3] = ants->top;
 	while (q[0] < ABS)
 	{
-		q[1] = path->top - 1; //path index
+		q[1] = path->top;
+		graph->path_size == LO ? (q[1]) : (q[1] -= 1); //path index
 		graph->path_size == LO ? q[2] = q[0] + 1: q[0]; //ants index
 		ft_push(q[3]++, ants);
 		while (q[1]-- > 0)
