@@ -6,7 +6,7 @@
 /*   By: lmncube <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 11:29:46 by lmncube           #+#    #+#             */
-/*   Updated: 2018/09/24 16:11:15 by lmncube          ###   ########.fr       */
+/*   Updated: 2018/09/25 08:53:23 by lmncube          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void				get_edges(t_graph *graph, char **map);
 void				get_links(t_graph *graph, char **map);
 void				dft(t_graph *graph, t_stack *stack, int k);
 void				part_1(t_graph *g, t_stack *p, t_stack *a, int lo);
-void				part_2(t_graph *g, t_stack *p, t_stack *a, int lo, int abs);
+void				part_2(t_graph *g, t_stack *p, t_stack *a, int lo);
 void				part_3(t_graph *g, t_stack *p, t_stack *a, int lo);
 
 #endif

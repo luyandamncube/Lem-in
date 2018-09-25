@@ -32,7 +32,7 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	@make -C $(LDIR)
 	@$(CC) -o $(@) $? $(HFLAGS) $(LFLAGS)
-	@echo "\033[1;32;40mDone making Lem-in! \033[0m"
+	@echo "\033[1;32;40mDone making lem-in! \033[0m"
 
 $(ODIR)/%.o : $(SDIR)/%.c
 	@mkdir -p $(ODIR)
