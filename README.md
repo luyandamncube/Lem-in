@@ -31,10 +31,12 @@ Maps are stored in `marking/`
 
 ## Output 
 The output will be displayed in following format:
-`number_of_ants
+```
+number_of_ants
 the_rooms
 the_links
-L.ant_one-room_3 L.ant_two-room_2 L.ant_three-room_1 ...`
+L.ant_one-room_3 L.ant_two-room_2 L.ant_three-room_1 ...
+```
 
 Concepts tested:
 - Algorithms (Depth-First-Search)
