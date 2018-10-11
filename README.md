@@ -6,7 +6,7 @@
 
 ![final mark](resources/Lem-in-finalmark.png)
 
-Lem-in Project
+Algorithms I Project
 
 based on the this traversal method: `https://www.geeksforgeeks.org/iterative-depth-first-traversal/`
 
