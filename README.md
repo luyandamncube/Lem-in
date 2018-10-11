@@ -27,7 +27,14 @@ based on the this traversal method: `https://www.geeksforgeeks.org/iterative-dep
 Maps are stored in `marking/`
 - `make`  Compiles `./Lem-in` binary
 - `./Lem-in < marking/map_name` Runs a selected map  
-- `./Lem-in` Allows user to type map directly into stdin   
+- `./Lem-in` Allows user to type map directly into stdin 
+
+## Output 
+The output will be displayed in following format:
+`number_of_ants
+the_rooms
+the_links
+L.ant_one-room_3 L.ant_two-room_2 L.ant_three-room_1 ...`
 
 Concepts tested:
 - Algorithms (Depth-First-Search)
