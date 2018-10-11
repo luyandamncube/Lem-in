@@ -25,9 +25,9 @@ based on the this traversal method: `https://www.geeksforgeeks.org/iterative-dep
 
 ### ./Lem-in commands
 Maps are stored in `marking/`
-`make'                          Compiles `./Lem-in` binary
-`./Lem-in < marking/map_name`   Runs a selected map  
-`./Lem-in `                     Allows user to type map directly into stdin   
+- `make'                          Compiles `./Lem-in` binary
+- `./Lem-in < marking/map_name`   Runs a selected map  
+- `./Lem-in `                     Allows user to type map directly into stdin   
 
 Concepts tested:
 - Algorithms (Depth-First-Search)
